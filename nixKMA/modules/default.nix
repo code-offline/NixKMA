@@ -8,5 +8,6 @@
     ./ssh.nix
     ./desktop.nix
     ./virtualbox.nix
+    ./home-manager.nix
   ];
 }

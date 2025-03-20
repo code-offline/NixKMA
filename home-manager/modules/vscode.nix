@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  nixpkgs.config.allowUnfree = true;
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -8,7 +10,7 @@
 
       # Web
       bierner.comment-tagged-templates
-      vscode-extensions.vue.volar
+      vue.volar
     ];
   };
 }
