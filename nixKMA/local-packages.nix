@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   
   environment.systemPackages = with pkgs; [
+    # Основные пакеты
     vim
     htop
     nano
@@ -14,9 +15,29 @@
     ranger
     btop
     gcc
-    kbd
     unrar
     neofetch
     git
+
+    # Пакеты для разработки
+    python39
+    jdk23
+    nodejs_23
+    docker
+
+    helix
+    jetbrains.idea-community
+    jetbrains.pycharm-community
+    
+    chromium
+    dbeaver-bin
+    postman
+    drawio
+
+    # Офис
+    libreoffice
+    blender
+    krita
+    inkscape
   ];
 }

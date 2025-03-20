@@ -5,7 +5,7 @@
     defaultUserShell = pkgs.zsh;
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "video" "networkmanager" ];
+      extraGroups = [ "video" "networkmanager" "vboxusers" ];
     };
   };
 }
