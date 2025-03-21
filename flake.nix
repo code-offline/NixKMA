@@ -8,37 +8,40 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, ... }@inputs: let
     system = "x86_64-linux";
     stateVersion = "24.11";
-    user = "student";
   in {
     colmena = {
       meta = {
         nixpkgs = import nixpkgs {
           description = "NixKMA configuration";
+          overlays = [];
 
           inherit system;
         };
 
         specialArgs = {
-          inherit inputs stateVersion user;
+          inherit inputs stateVersion;
         };
       };
 
-      defaults = { nixpkgs, home-manager, ... }: {
+      defaults = { nixpkgs, ... }: {
         imports = [
           ./nixKMA/configuration.nix
         ];
 
-        fileSystems."/" = {
-          device = "/dev/sda2";
-          fsType = "ext4";
-        };
+	deployment.targetPort = 2403;
       };
 
-      "192.168.1.148" = {
-        networking.hostName = "test1";
+      "10.0.0.121" = {
+        networking.hostName = "nixKMA1";
+      };
+      "10.0.0.175" = {
+        networking.hostName = "nixKMA6";
+      };
+      "10.0.0.124" = {
+        networking.hostName = "nixKMA7";
       };
     };
   };

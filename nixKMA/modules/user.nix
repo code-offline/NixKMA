@@ -1,10 +1,10 @@
-{ user, pkgs, ... }: {
+{ pkgs, ... }: {
   programs.zsh.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
 
-    users.${user} = {
+    users.student = {
       isNormalUser = true;
       extraGroups = [ "video" "networkmanager" "vboxusers" ];
     };
