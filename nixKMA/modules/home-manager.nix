@@ -3,5 +3,10 @@
   
   imports = [ inputs.home-manager.nixosModules.default ];
   
-  home-manager.backupFileExtension = "backup";
+  home-manager = {
+    backupFileExtension = "backup";
+
+    useGlobalPkgs = true;
+    useUserPackages = false;
+  };
 }
