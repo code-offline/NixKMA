@@ -1,6 +1,4 @@
 {
-  description = "NixKMA configuration";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
@@ -12,32 +10,36 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     system = "x86_64-linux";
-    homeStateVersion = "24.11";
     stateVersion = "24.11";
     user = "student";
-    hostname = "nixKMA";
   in {
-    nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-      inherit system;
-      
-      modules = [
-        ./nixKMA/configuration.nix
-      ];
+    colmena = {
+      meta = {
+        nixpkgs = import nixpkgs {
+          description = "NixKMA configuration";
 
-      specialArgs = {
-        inherit inputs stateVersion user hostname;
-      };
-    };
+          inherit system;
+        };
 
-    homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      extraSpecialArgs = {
-        inherit inputs homeStateVersion user;
+        specialArgs = {
+          inherit inputs stateVersion user;
+        };
       };
 
-      modules = [
-        ./home-manager/home.nix
-      ];
+      defaults = { nixpkgs, home-manager, ... }: {
+        imports = [
+          ./nixKMA/configuration.nix
+        ];
+
+        fileSystems."/" = {
+          device = "/dev/sda2";
+          fsType = "ext4";
+        };
+      };
+
+      "192.168.1.148" = {
+        networking.hostName = "test1";
+      };
     };
   };
 }
