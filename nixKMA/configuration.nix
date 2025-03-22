@@ -1,6 +1,5 @@
-{ pkgs, stateVersion, hostname, ... }: {
+{
   imports = [
-    ./hardware-configuration.nix
     ./modules
     ./local-packages.nix
   ];
@@ -9,6 +8,5 @@
     font = "Cyr_a8x16";
   };
 
-  networking.hostName = hostname;
-  system.stateVersion = stateVersion;
+  networking.hostName = "nixKMA";
 }
