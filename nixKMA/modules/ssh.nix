@@ -5,6 +5,7 @@ let
 in {
   services.openssh = {
     enable = true;
+    ports = [ 2403 ];
     settings = { 
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
