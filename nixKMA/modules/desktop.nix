@@ -18,5 +18,12 @@
     iagno
     tali
     totem
+    gnome-contacts
+    gnome-weather
+    gnome-clocks
+    gnome-maps
+    yelp
+    snapshot
+    simple-scan
   ]);
 }
