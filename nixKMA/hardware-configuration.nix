@@ -1,11 +1,11 @@
 {
   fileSystems."/" = { 
-    device = "/dev/sda2";
+    device = "/dev/sdb2";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/sda1";
+    device = "/dev/sdb1";
     fsType = "vfat";
     options = [ "fmask=0022" "dmask=0022" ];
   };
