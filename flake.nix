@@ -14,7 +14,7 @@
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     stateVersion = "24.11";
-    user = "student";
+    user = "admin";
     hostname = "nixKMA";
   in {
     nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {

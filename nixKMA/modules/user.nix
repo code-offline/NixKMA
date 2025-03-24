@@ -4,7 +4,7 @@
   users = {
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "video" "networkmanager" "vboxusers" ];
+      extraGroups = [ "video" "networkmanager" "vboxusers" "wheel" ];
     };
   };
 }
