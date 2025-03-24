@@ -39,9 +39,11 @@
       };
       "10.0.0.175" = {
         networking.hostName = "nixKMA6";
+	imports = [ ./nixKMA/modules/amd.nix ];
       };
       "10.0.0.124" = {
         networking.hostName = "nixKMA7";
+	imports = [ ./nixKMA/modules/amd.nix ];
       };
     };
   };
