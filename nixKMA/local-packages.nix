@@ -34,6 +34,19 @@
     postman
     drawio
 
+    vscode
+    
+    # Плагины vscode (не работает)
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        ms-python.python
+        ms-python.debugpy
+        vue.volar
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+
+      ];
+    })
+
     # Офис
     libreoffice
     blender

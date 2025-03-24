@@ -9,7 +9,6 @@
       ms-python.debugpy
 
       # Web
-      bierner.comment-tagged-templates
       vue.volar
     ];
   };
