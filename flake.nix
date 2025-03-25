@@ -11,7 +11,18 @@
   outputs = { self, nixpkgs, ... }@inputs: let
     system = "x86_64-linux";
     stateVersion = "24.11";
+    pkgs = import nixpkgs { inherit system; };
   in {
+    devShells.${system} = {
+      "pyside6" = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          python3
+	  (python3.withPackages (ps: with ps; [ pyside6 ]))
+	  qt6.qttools
+	];
+      };
+    };
+
     colmena = {
       meta = {
         nixpkgs = import nixpkgs {
