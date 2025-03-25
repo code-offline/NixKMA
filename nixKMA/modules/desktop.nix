@@ -8,6 +8,8 @@
     xkbOptions = "grp:alt_shift_toggle";
   };
 
+  i18n.defaultLocale = "ru_RU.UTF-8";
+
   environment.gnome.excludePackages = (with pkgs; [
     atomix
     cheese

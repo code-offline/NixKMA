@@ -34,7 +34,7 @@
 	deployment.targetPort = 2403;
       };
 
-      "10.0.0.121" = {
+      "10.0.0.163" = {
         networking.hostName = "nixKMA1";
       };
       "10.0.0.175" = {
