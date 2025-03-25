@@ -52,5 +52,9 @@
     blender
     krita
     inkscape
+
+    # Admin
+    colmena
+    ghostty
   ];
 }

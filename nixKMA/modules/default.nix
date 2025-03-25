@@ -9,5 +9,7 @@
     ./desktop.nix
     ./virtualbox.nix
     ./home-manager.nix
+    ./nh.nix
+    ./env.nix
   ];
 }
