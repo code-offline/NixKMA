@@ -3,6 +3,9 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+
+    xkb.layout = "us,ru";
+    xkbOptions = "grp:alt_shift_toggle";
   };
 
   environment.gnome.excludePackages = (with pkgs; [
