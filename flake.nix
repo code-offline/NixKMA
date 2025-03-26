@@ -42,10 +42,22 @@
           ./nixKMA/configuration.nix
         ];
 
+	home-manager = {
+          users = {
+            "student" = { pkgs, ... }: {
+	      imports = [
+                ./home-manager/modules
+              ];     
+
+              home.stateVersion = stateVersion;
+            };
+          };
+        };
+
 	deployment.targetPort = 2403;
       };
 
-      "10.0.0.163" = {
+      "10.0.0.159" = {
         networking.hostName = "nixKMA1";
       };
       "10.0.0.175" = {
